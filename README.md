@@ -16,3 +16,7 @@ La opción «Dictar texto» utiliza Web Speech API del navegador cuando está di
 ## Despliegue
 
 Sitio HTML estático: importar el repositorio en Vercel con preset «Other», sin build.
+
+## Whisper experimental en navegador
+
+En la lista de audios, pulsa «Transcribir con Whisper (prueba)». Se utiliza @huggingface/transformers 3.8.1 desde jsDelivr y el modelo onnx-community/whisper-tiny (cuantizado, WASM). La primera ejecución requiere descargar código y pesos; puede consumir mucha memoria/datos y fallar en Android. Esta implementación **no está validada en el dispositivo del usuario**. No es procesamiento en segundo plano: mantén la pestaña abierta. Los audios permanecen en memoria y desaparecen al recargar. La cancelación descarta resultados pero puede no interrumpir inmediatamente una inferencia en ejecución. Solo usar datos ficticios.
